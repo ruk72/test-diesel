@@ -1,0 +1,82 @@
+if defined?(FatFreeCRM::Application)
+  FatFreeCRM::Application.configure do
+    # Settings specified here will take precedence over those in config/application.rb
+
+    # Code is not reloaded between requests
+    config.cache_classes = true
+
+    # Full error reports are enabled, since this is an internal application.
+    config.consider_all_requests_local       = true
+    # Caching is turned on
+    config.action_controller.perform_caching = true
+
+    # Disable Rails's static asset server (Apache or nginx will already do this)
+    config.serve_static_assets = false
+
+    # Compress JavaScripts and CSS
+    config.assets.compress = true
+
+    # Don't fallback to assets pipeline if a precompiled asset is missed
+    config.assets.compile = true
+    
+    # Don't care if the mailer can't send
+    config.action_mailer.raise_delivery_errors = true
+    
+    # set delivery method to :smtp, :sendmail or :test
+    config.action_mailer.delivery_method = :smtp
+
+    # these options are only needed if you choose smtp delivery
+    config.action_mailer.smtp_settings = {
+              :address              => 'smtp.gmail.com',
+              :port                 => 587,
+              :domain               => 'imap.gmail.com',
+              :user_name            => 'kiplmailtest@gmail.com',
+              :password             => 'kipltest',
+              :authentication       => 'login',
+              :enable_starttls_auto => true
+      }
+
+    # Generate digests for assets URLs
+    config.assets.digest = true
+
+    # Defaults to Rails.root.join("public/assets")
+    # config.assets.manifest = YOUR_PATH
+
+    # Specifies the header that your server uses for sending files
+    # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
+    # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+
+    # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+    # config.force_ssl = true
+
+    # See everything in the log (default is :info)
+    # config.log_level = :debug
+
+    # Use a different logger for distributed setups
+    # config.logger = SyslogLogger.new
+
+    # Use a different cache store in production
+    # config.cache_store = :mem_cache_store
+
+    # Enable serving of images, stylesheets, and JavaScripts from an asset server
+    # config.action_controller.asset_host = "http://assets.example.com"
+
+    # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+    # config.assets.precompile += %w( search.js )
+    config.assets.precompile += ['print.css',
+                                 'calendar_date_select/default.css',
+                                 /calendar_date_select\/[^\/]*\.js/]
+
+    # Enable threaded mode
+    # config.threadsafe!
+
+    # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
+    # the I18n.default_locale when a translation can not be found)
+    config.i18n.fallbacks = true
+
+    # Send deprecation notices to registered listeners
+    config.active_support.deprecation = :notify
+    
+    config.action_mailer.default_url_options = { :host => 'diesel-crm.heroku.com' }
+  end
+end

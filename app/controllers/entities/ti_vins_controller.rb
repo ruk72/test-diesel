@@ -1,0 +1,3 @@
+class TiVinsController < ApplicationController
+  
+end

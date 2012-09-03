@@ -1,0 +1,97 @@
+- edit ||= false
+- collapsed = session[:lead_ti_vin].nil? 
+= subtitle :lead_ti_vin, collapsed, t("Trade In")
+.section
+  %small#lead_vin_intro{ hidden_if(!collapsed) }
+    = t(:intro, t("Trade In")) unless edit
+  #lead_ti{ hidden_if(collapsed) }
+    %table
+      %tr
+        %td
+          .label #{t "Year"}:
+          = select("ti_vin", "model_year", @vehiclecsv.collect {|p| [ p.model_year, p.model_year ] }, {:prompt => 'Select'}, {:onChange => "#{remote_function(:url => {:controller =>"leads", :action => "update_car1"}, :with => "'model_year='+value")}"}) 
+        %td= spacer
+        %td 
+          .label #{t "Make"}: 
+          #update4
+            = render :partial =>'update_car1', :object => [@carupdate, @a]
+      %tr 
+        %td  
+          .label #{t "Model Name"}:        
+          #update5
+            = render :partial =>'update_momaid1', :object => [@momaid, @momaid2]
+        %td= spacer
+        %td
+          .label #{t "Model Trim"}:        
+          #update6
+            = render :partial =>'update_modeltrim1', :object => [@motrim, @momaid]
+      %tr
+        %td
+          .label.top #{t "Interior Color"}:
+          - if edit
+            = text_field :ti_vin, :int_color, :value => "#{@lead.ti_vin.int_color}"
+          - else
+            = text_field :ti_vin, :int_color  
+        %td= spacer
+        %td
+          .label.top #{t "Exterior Color"}:
+          - if edit
+            = text_field :ti_vin, :ext_color, :value => "#{@lead.ti_vin.ext_color}"
+          - else
+            = text_field :ti_vin, :ext_color
+      %tr
+        %td
+          .label.top #{t "Vin"}:
+          - if edit
+            = text_field :ti_vin, :vin, :value => "#{@lead.ti_vin.vin}"
+          - else
+            = text_field :ti_vin, :vin
+        %td= spacer
+        %td
+          .label.top #{t "Requested Trade In Value"}:
+          - if edit
+            = text_field :ti_vin, :requested_trade_in, :value => "#{@lead.ti_vin.requested_trade_in}"
+          - else
+            = text_field :ti_vin, :requested_trade_in
+      %tr
+        %td
+          .label.top #{t "Actual Trade In Value"}:
+          - if edit
+            = text_field :ti_vin, :actual_trade_value, :value => "#{@lead.ti_vin.actual_trade_value}"
+          - else
+            = text_field :ti_vin, :actual_trade_value
+        %td= spacer
+        %td
+          .label.top #{t "Odometer Reading"}:
+          - if edit
+            = text_field :ti_vin, :odo_reading, :value => "#{@lead.ti_vin.odo_reading}"
+          - else
+            = text_field :ti_vin, :odo_reading
+      %tr
+        %td
+          .label.top #{t "Payoff Amount"}:
+          - if edit
+            = text_field :ti_vin, :payoff_amount, :value => "#{@lead.ti_vin.payoff_amount}"
+          - else
+            = text_field :ti_vin, :payoff_amount
+        %td= spacer
+        %td
+          .label.top #{t "Payoff Good Till"}:
+          - if edit
+            = text_field :payoff_good_till,:style => "width:110px", :autocomplete => :off, :value => "#{@lead.ti_vin.payoff_good_till}"
+          - else
+            = text_field :payoff_good_till,:style => "width:110px", :autocomplete => :off
+      %tr
+        %td
+          .label.top #{t "Finance Company"}:
+          - if edit
+            = text_area :ti_vin, :finance_company,:rows => 2, :value => "#{@lead.ti_vin.finance_company}"
+          - else
+            = text_area :ti_vin, :finance_company,:rows => 2
+        %td= spacer
+        %td
+          .label.top #{t "Notes"}:
+          - if edit
+            = text_area :ti_vin, :notes,:rows => 2, :value => "#{@lead.ti_vin.notes}"
+          - else
+            = text_area :ti_vin, :notes,:rows => 2
