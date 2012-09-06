@@ -28,6 +28,7 @@
       %tr
         %td
           .label.top #{t "Interior Color"}:
+
           - if edit
             = text_field :ti_vin, :int_color, :value => "#{@lead.ti_vin.int_color}"
           - else
@@ -95,3 +96,7 @@
             = text_area :ti_vin, :notes,:rows => 2, :value => "#{@lead.ti_vin.notes}"
           - else
             = text_area :ti_vin, :notes,:rows => 2
+
+          
+       
+
