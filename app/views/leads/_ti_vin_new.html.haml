@@ -79,9 +79,9 @@
         %td
           .label.top #{t "Payoff Good Till"}:
           - if edit
-            = text_field :payoff_good_till,:style => "width:110px", :autocomplete => :off, :value => "#{@lead.ti_vin.payoff_good_till}"
+            = date_select :ti_vin, :payoff_good_till, :default => @lead.ti_vin.payoff_good_till
           - else
-            = text_field :payoff_good_till,:style => "width:110px", :autocomplete => :off
+            = date_select :ti_vin, :payoff_good_till
       %tr
         %td
           .label.top #{t "Finance Company"}:

@@ -11,10 +11,8 @@
     %style= yield :styles
 
     = javascript_include_tag :application
-
     - unless tabless_layout?
       = javascript_include_tag "calendar_date_select/format_#{t(:calendar_date_select_format, :default => 'american')}"
-
     = csrf_meta_tag
     = hook(:javascript_includes, self)
 
