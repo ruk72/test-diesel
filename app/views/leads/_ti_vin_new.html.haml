@@ -80,8 +80,8 @@
           .label.top #{t "Payoff Good Till"}:
           - if edit
             = date_select :ti_vin, :payoff_good_till, :default => @lead.ti_vin.payoff_good_till
-          - else
-            = date_select :ti_vin, :payoff_good_till
+          - else 
+            = date_select :ti_vin, :payoff_good_till, :style => "width:40px"
       %tr
         %td
           .label.top #{t "Finance Company"}:
