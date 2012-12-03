@@ -27,7 +27,7 @@ if defined?(FatFreeCRM::Application)
 
     # these options are only needed if you choose smtp delivery
     config.action_mailer.smtp_settings = {
-              :address              => 'smtp.gmail.com',
+              :address              => 'localhost',
               :port                 => 587,
               :domain               => 'imap.gmail.com',
               :user_name            => 'kiplmailtest@gmail.com',

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717113813) do
+ActiveRecord::Schema.define(:version => 20120718065617) do
 
   create_table "account_contacts", :force => true do |t|
     t.integer  "account_id"
@@ -84,21 +84,21 @@ ActiveRecord::Schema.define(:version => 20120717113813) do
   add_index "addresses", ["addressable_id", "addressable_type"], :name => "index_addresses_on_addressable_id_and_addressable_type"
 
   create_table "api_leads", :force => true do |t|
-    t.string   "id_api"
-    t.string   "makeId_api"
-    t.string   "year_api"
-    t.string   "makeName_api"
-    t.string   "makeNiceName_api"
-    t.string   "modelId_api"
-    t.string   "modelName_api"
-    t.string   "modelNiceName_api"
-    t.string   "modelYearId_api"
-    t.string   "transmissionType_api"
-    t.string   "engineCompressorType_api"
-    t.string   "engineFuelType_api"
-    t.string   "engineCylinder_api"
-    t.string   "engineSize_api"
-    t.string   "price_api"
+    t.string   "id-api"
+    t.string   "makeId-api"
+    t.string   "year-api"
+    t.string   "makeName-api"
+    t.string   "makeNiceName-api"
+    t.string   "modelId-api"
+    t.string   "modelName-api"
+    t.string   "modelNiceName-api"
+    t.string   "modelYearId-api"
+    t.string   "transmissionType-api"
+    t.string   "engineCompressorType-api"
+    t.string   "engineFuelType-api"
+    t.string   "engineCylinder-api"
+    t.string   "engineSize-api"
+    t.string   "price-api"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
     t.integer  "lead_id"
@@ -407,6 +407,11 @@ ActiveRecord::Schema.define(:version => 20120717113813) do
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
     t.integer  "lead_id"
+    t.string   "int_color"
+    t.string   "ext_color"
+    t.string   "vin"
+    t.string   "requested_trade_in"
+    t.text     "notes"
   end
 
   create_table "users", :force => true do |t|
@@ -458,9 +463,9 @@ ActiveRecord::Schema.define(:version => 20120717113813) do
   end
 
   create_table "versions", :force => true do |t|
-    t.string   "item_type",                     :null => false
-    t.integer  "item_id",                       :null => false
-    t.string   "event",          :limit => 512, :null => false
+    t.string   "item_type",      :null => false
+    t.integer  "item_id",        :null => false
+    t.string   "event",          :null => false
     t.string   "whodunnit"
     t.text     "object"
     t.datetime "created_at"
@@ -470,7 +475,6 @@ ActiveRecord::Schema.define(:version => 20120717113813) do
   end
 
   add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"
-  add_index "versions", ["whodunnit"], :name => "index_versions_on_whodunnit"
 
   create_table "voi_vins", :force => true do |t|
     t.integer  "selling_price"
