@@ -492,6 +492,35 @@ en-GB:
   subject_opportunity: opportunity
   subject_task: task
 
+  action_create: created
+  action_destroy: deleted
+  action_reassigned: reassigned
+  action_rejected: rejected
+  action_rescheduled: rescheduled
+  action_update: updated
+  action_view: viewed
+  action_won: won
+  activities: Activities
+  no_activity_records: No activity records found.
+  recent_activity: Recent Activity
+  recent_activity_options: Recent Activity Options
+  subject_account: account
+  subject_address: address on
+  subject_campaign: campaign
+  subject_comment: comment on
+  subject_contact: contact
+  subject_email: email on
+  subject_lead: lead
+  subject_opportunity: opportunity
+  subject_task: task
+  subject_user: user
+  create_past_participle: Record Creations
+  view_past_participle: Views
+  update_past_participle: Updates
+  destroy_past_participle: Deletions
+  all_events_past_participle: Activities
+
+
   # Views -> Common.
   #----------------------------------------------------------------------------
   add_note: Add Note
