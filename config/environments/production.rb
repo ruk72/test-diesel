@@ -34,6 +34,7 @@ if defined?(FatFreeCRM::Application)
               :password             => 'kipltest',
               :authentication       => 'login',
               :enable_starttls_auto => true
+
       }
 
     # Generate digests for assets URLs

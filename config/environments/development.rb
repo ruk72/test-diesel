@@ -27,10 +27,11 @@ if defined?(FatFreeCRM::Application)
               :address              => 'smtp.gmail.com',
               :port                 => 587,
               :domain               => 'imap.gmail.com',
-              :user_name            => 'kiplmailtest@gmail.com',
-              :password             => 'kipltest',
+              :user_name            => 'anupmahabudhe@gmail.com',
+              :password             => 'nikhil230980',
               :authentication       => 'login',
               :enable_starttls_auto => true
+
       }
 
     # Print deprecation notices to the Rails logger
@@ -39,7 +40,7 @@ if defined?(FatFreeCRM::Application)
     # Only use best-standards-support built into browsers
     config.action_dispatch.best_standards_support = :builtin
     
-    
+    config.mailer_sender = "support@ratemycollege.co.in"
 
     # Raise exception on mass assignment protection for Active Record models
     #config.active_record.mass_assignment_sanitizer = :strict
