@@ -93,8 +93,8 @@
 :email_dropbox:
   :server                     : "imap.gmail.com"        # IMAP server name.
   :port                       : "993"        # IMAP server port number.
-  :ssl                        : ""        # True for secure IMAP connection, false othewise.
-  :address                    : "anupwin@gmail.com"        # Dropbox email address.
+  :ssl                        : "True"        # True for secure IMAP connection, false othewise.
+  :address                    : "ruben@epowercrm.com"        # Dropbox email address.
   :user                       : "demo.epowercrm@gmail.com"        # User to login to the IMAP server.
   :password                   : "stylusc80"        # Password to login to the IMAP server.
   :scan_folder                : "inbox"        # Folder to scan for dropbox messages.
@@ -112,7 +112,7 @@
 :email_comment_replies:
   :server                     : "imap.gmail.com"        # IMAP server name.
   :port                       : "993"        # IMAP server port number.
-  :ssl                        : ""        # True for secure IMAP connection, false othewise.
+  :ssl                        : "True"        # True for secure IMAP connection, false othewise.
   :address                    : "demo.epowercrm@gmail.com"        # Comment reply email address.
   :user                       : "demo.epowercrm@gmail.com"        # User to login to the IMAP server.
   :password                   : "stylusc80"        # Password to login to the IMAP server.
