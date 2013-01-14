@@ -63,7 +63,7 @@ class LeadsController < EntitiesController
   end
   #update for apivoi.
   def update_car
-    @carupdate = Vehiclecsv.select("distinct model_make_display_name").find_all_by_model_year(params[:model_year])
+    @carupdate = Vehiclecsv.select("distinct model_make_display_name").find_all_by_model_year(params[:model_year],:order => "model_make_display_name ASC")
     @a = params[:model_year]
     # @carupdate1 = Kharabcar.find_all_by_id(params[:id])
     render :update do |page|
@@ -86,7 +86,7 @@ class LeadsController < EntitiesController
   end
   #update for apiti
   def update_car1
-    @carupdate = Vehiclecsv.select("distinct model_make_display_name").find_all_by_model_year(params[:model_year])
+    @carupdate = Vehiclecsv.select("distinct model_make_display_name").find_all_by_model_year(params[:model_year],:order => "model_make_display_name ASC")
     @a = params[:model_year]
     # @carupdate1 = Kharabcar.find_all_by_id(params[:id])
     render :update do |page|
