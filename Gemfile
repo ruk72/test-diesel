@@ -7,7 +7,7 @@ source :rubygems
 gem 'pg', '~> 0.13.2'
 gem 'thin'
 gem 'heroku'
-gem 'whenever', :require => false
+gem 'rufus-scheduler'
 
 # Removes a gem dependency
 def remove(name)
