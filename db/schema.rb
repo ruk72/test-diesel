@@ -393,9 +393,9 @@ ActiveRecord::Schema.define(:version => 20120718065617) do
   add_index "tasks", ["user_id", "name", "deleted_at"], :name => "index_tasks_on_user_id_and_name_and_deleted_at", :unique => true
 
   create_table "ti_vins", :force => true do |t|
-    t.integer  "actual_trade_value"
-    t.integer  "odo_reading"
-    t.integer  "payoff_amount"
+    t.string  "actual_trade_value"
+    t.string  "odo_reading"
+    t.string  "payoff_amount"
     t.datetime "payoff_good_till"
     t.text     "finance_company"
     t.integer  "api_lead_id"
@@ -479,7 +479,7 @@ ActiveRecord::Schema.define(:version => 20120718065617) do
   create_table "voi_vins", :force => true do |t|
     t.integer  "selling_price"
     t.integer  "stock_no"
-    t.integer  "odo_reading"
+    t.string  "odo_reading"
     t.integer  "api_lead_id"
     t.string   "model_make_id"
     t.string   "model_name"
